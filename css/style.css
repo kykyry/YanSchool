@@ -1,19 +1,21 @@
-/* * {
+* {
     box-sizing: border-box;
-} */
+}
 
 body {
     margin: 0;
 }
 
 .container {
-    max-width: 70%;
+    max-width: 700px;
+    width: 100%;
     margin: 0px auto;
     text-align: center;
     font-family: 'PT Mono', monospace;
     font-size: 14px;
     color: #000000;
-    padding: 100px 150px 100px 150px;
+    padding: 100px 0px;
+    margin: 0px auto;
 }
 
 a {
@@ -55,7 +57,11 @@ a:active {
 }
 
 .intro__img {
-    padding: 124px 0px 36px;
+    margin: 124px 0px 36px;
+    max-width: 340px;
+    max-height: 340px;
+    width: 100%;
+    height: 100%;
 }
 
 .intro__title {
@@ -78,7 +84,7 @@ a:active {
 
 .exp .container {
     text-align: start;
-    margin: 0px;
+    /* margin: 0px; */
 }
 
 .exp__elem {
@@ -128,7 +134,6 @@ a:active {
 .exp__name:after {
     font-family: 'PT Mono', monospace;
     position: absolute;
-    /* font-size: 18px; */
     right: 0px;
     top: 14px;
     content: "+";
@@ -231,12 +236,7 @@ a:active {
 }
 
 .portfolio__elem__controls {
-    position: absolute;
-    width: 100%;
     text-align: end;
-    left: 0px;
-    bottom: -40px;
-    z-index: 10;
 }
 
 .portfolio__elem__controls label {
@@ -263,7 +263,6 @@ a:active {
     border-radius: 50%;
     box-shadow: 0 0 2px rgba(0, 0, 0, .8);
     transition: background-color ease-in-out .5s, border-color .5s;
-
 }
 
 .portfolio__elem__controls label:hover:after {
@@ -291,14 +290,6 @@ a:active {
 #music4:checked~.portfolio__elem__slider #img__music4 {
     opacity: 1;
     z-index: 1;
-}
-
-.map .portfolio__elem__controls,
-.poster .portfolio__elem__controls,
-.music .portfolio__elem__controls {
-    position: relative;
-    text-align: end;
-    top: 20px;
 }
 
 #map1:checked~.portfolio__elem__controls label:nth-of-type(1):after,
@@ -339,10 +330,13 @@ a:active {
 .footer__messenger {
     position: relative;
     display: grid;
-    margin: 16px 270px 20px;
+    margin-top: 16px;
+    margin-bottom: 20px;
+    height: 48px;
     grid-template-columns: 40px 40px 40px;
     grid-gap: 47px;
     text-align: center;
+    justify-content: center;
 }
 
 .footer__messenger__logo {
@@ -360,8 +354,8 @@ a:active {
     display: inline-block;
     height: 48px;
     left: -5px;
-    position: absolute;
-    top: -5px;
+    position: relative;
+    top: -50px;
     z-index: 0;
     width: 48px;
     border-radius: 50%;
@@ -372,8 +366,9 @@ a:active {
 }
 
 .footer__f__logo:hover:after {
-    border-color: rgb(57, 91, 153) + rgba(0, 0, 0, .2);
-    background: rgb(57, 91, 153) + rgba(0, 0, 0, .2);
+    border-color: rgb(46, 73, 122);
+    background: rgb(46, 73, 122);
+    /* По ТЗ надо наложить два цвета друг на друга: #395A99 + rgba(0,0,0,0.20).Итоговый цвет получается умножением исходного rgb на 0.8 */
 }
 
 .footer__f__logo:active:after {
@@ -387,9 +382,9 @@ a:active {
     content: "";
     display: inline-block;
     height: 48px;
-    left: 82px;
-    position: absolute;
-    top: -5px;
+    left: -5px;
+    position: relative;
+    top: -50px;
     z-index: 0;
     width: 48px;
     border-radius: 50%;
@@ -400,13 +395,14 @@ a:active {
 }
 
 .footer__tw__logo:hover:after {
-    border-color: #51ADEF + rgba(0, 0, 0, .2);
-    background: #51ADEF + rgba(0, 0, 0, .2);
+    background: rgb(65, 138, 188);
+    border-color: rgb(65, 138, 188);
+    /* По ТЗ надо наложить два цвета друг на друга: #51ADEF + rgba(0,0,0,0.20).Итоговый цвет получается умножением исходного rgb на 0.8 */
 }
 
 .footer__tw__logo:active:after {
-    background: #51ADEF;
     border-color: #51ADEF;
+    background: #51ADEF;
     opacity: 0.7;
 }
 
@@ -415,9 +411,9 @@ a:active {
     content: "";
     display: inline-block;
     height: 48px;
-    left: 169px;
-    position: absolute;
-    top: -5px;
+    left: -5px;
+    position: relative;
+    top: -50px;
     z-index: 0;
     width: 48px;
     border-radius: 50%;
@@ -428,8 +424,9 @@ a:active {
 }
 
 .footer__te__logo:hover:after {
-    border-color: #2CA5E0 + rgba(0, 0, 0, .2);
-    background: #2CA5E0 + rgba(0, 0, 0, .2);
+    border-color: rgb(35, 132, 179);
+    background: rgb(35, 132, 179);
+    /* По ТЗ надо наложить два цвета друг на друга: #2CA5E0 + rgba(0,0,0,0.20).Итоговый цвет получается умножением исходного rgb на 0.8 */
 }
 
 .footer__te__logo:active:after {
@@ -441,29 +438,34 @@ a:active {
 .footer__text {
     font-size: 14px;
     line-height: 20px;
-    padding-bottom: 40px;
+    margin-bottom: 20px;
 }
 
-/* form{
-    position:relative;
-    box-sizing: border-box;
-} */
-.footer__form {
+.footer__form__group {
+    margin-top: 20px;
+}
+
+.footer__form__first__line {
     display: flex;
     justify-content: space-between;
-    height: 52px;
+    height: 100%;
+}
+
+.footer__form__group__first {
+    max-width: 340px;
+    width: 100%;
 }
 
 .footer__form__group input {
-    max-height: 36px;
-    height: 100%;
-    padding: 6px 150px 10px 12px;
+    padding: 6px 0px 10px 12px;
+    padding-right: 150px auto;
     border: 1px solid rgba(31, 64, 111, 0.20);
     border-radius: 4px;
     font-family: 'PT Sans', sans-serif;
     font-size: 16px;
     color: #000000;
     line-height: 20px;
+    width: 100%;
 }
 
 .footer__form__group input:focus,
@@ -472,19 +474,11 @@ a:active {
     border: 1px solid #0059D9;
 }
 
-.footer__form__group.new_string {
-    margin: 20px 0 20px 0;
+#text {
     max-height: 136px;
     height: 100%;
-}
-
-#text {
     padding: 6px 0px 94px 12px;
     height: 136px;
-    /* height: 100%; */
-    max-width: 693px;
-    width: 100%;
-
 }
 
 .footer__attach__btn {
@@ -496,20 +490,132 @@ a:active {
     border: 1px solid rgba(31, 64, 111, 0.20);
     border-radius: 4px;
     height: 36px;
-    margin-bottom: 20px;
+    margin: 20px 0px;
 }
+
 .footer__attach__btn:hover {
-    color:#000000
+    color: #000000
 }
-.footer__attach__btn:active{
+
+.footer__attach__btn:active {
     opacity: 0.7;
     color: #0059D9;
 }
 
-.footer__btn{
+.footer__btn {
     font-size: 18px;
 }
 
-/* font-family: 'Montserrat', sans-serif;
-font-family: 'PT Mono', monospace;
-font-family: 'PT Sans', sans-serif; */
+@media (max-width: 750px) {
+    .container {
+        max-width: 520px;
+        width: 100%;
+    }
+
+    .portfolio__elem__slider {
+        height: 280px;
+    }
+
+    .portfolio__elem__text {
+        margin-right: 100px !important;
+    }
+
+    .footer__form__group__first {
+        max-width: 250px !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .intro__img {
+        max-width: 250px !important;
+        max-height: 250px !important;
+    }
+
+    .portfolio__elem__title {
+        margin-top: 60px !important;
+    }
+
+    .portfolio__elem__text {
+        margin-right: 0px !important;
+        margin-top: 16px;
+    }
+
+    .portfolio__elem__controls {
+        text-align: center !important;
+        top: 16px !important;
+    }
+
+    .footer__text {
+        margin-bottom: 4px !important;
+    }
+
+    .footer__form__first__line {
+        display: inline-block !important;
+        width: 100%;
+        max-height: inherit !important;
+    }
+
+    .footer__form__group {
+        margin-top: 16px;
+    }
+
+    .footer__form__group__first {
+        max-width: inherit !important;
+    }
+
+}
+
+@media (max-width: 560px) {
+    .container {
+        max-width: 400px;
+        width: 100%;
+    }
+
+    .portfolio__elem__slider {
+        height: 215px !important;
+    }
+}
+
+@media (max-width: 430px) {
+    .container {
+        max-width: 350px;
+        width: 100%;
+    }
+
+    .portfolio__elem__slider {
+        height: 189px !important;
+    }
+}
+
+@media (max-width: 390px) {
+    .container {
+        max-width: 310px;
+        width: 100%;
+    }
+
+    .portfolio__elem__slider {
+        height: 167px !important;
+    }
+}
+
+@media (max-width: 340px) {
+    .intro__img {
+        max-width: 205px !important;
+        max-height: 205px !important;
+        margin-top: 0px !important;
+    }
+
+    .intro__title {
+        font-size: 32px;
+    }
+
+    .container {
+        max-width: 280px;
+        width: 100%;
+        padding: 88px 0px;
+    }
+
+    .portfolio__elem__slider {
+        height: 162px !important;
+    }
+}
