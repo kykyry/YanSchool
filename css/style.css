@@ -15,7 +15,6 @@ body {
     font-size: 14px;
     color: #000000;
     padding: 100px 0px;
-    margin: 0px auto;
 }
 
 a {
@@ -82,7 +81,7 @@ a:active {
     margin-bottom: 124px;
 }
 
-/* Блок exp можно сделать, используя <details> */
+/* Блок exp можно сделать, используя <details>, но тогда придется пользоваться js */
 
 .exp .container {
     text-align: start;
@@ -154,9 +153,8 @@ a:active {
     display: block;
 }
 
-.exp__elem:target .exp__name {
-    color: #000000 !important;
-    /* Не хочет оставаться черным во время "актива" */
+.exp__elem:target .exp__name a{
+    color: #000000;
     padding-bottom: 12px;
 }
 
